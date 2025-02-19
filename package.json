@@ -1,0 +1,20 @@
+{
+  "name": "aoijs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@akarui/aoi.db": "^2.3.3",
+    "@akarui/aoi.music": "^2.4.0",
+    "aoi.js": "^6.9.0",
+    "dotenv": "^16.4.7",
+    "ffmpeg-static": "^5.2.0",
+    "opusscript": "^0.0.8"
+  }
+}
