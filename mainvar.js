@@ -1,7 +1,7 @@
 module.exports = (client) => {
     client.variables(
       {
-      prefix:".",
+      prefix:"k!",
       welcome: false,
       welcometype: "text",
       welcomechannel: "0",

@@ -1,5 +1,6 @@
 const { AoiClient, LoadCommands } = require("aoi.js");
 const { AoiVoice, PlayerEvents, PluginName, Cacher, Filter } = require("@akarui/aoi.music");
+const { AoiCanvas, registerFonts } = require('aoi.canvas');
 const { configDotenv } = require("dotenv");
 require('dotenv').config()
 
@@ -19,9 +20,27 @@ const client = new AoiClient({
   }
 });
 
+//bot status
+client.status({
+    name: "Playing Visual Studio Code",
+    type: "PLAYING",
+    status: "dnd",
+    time: 12,
+  });
+
+//canvas setupn
+const canvas = new AoiCanvas(client);
+
+registerFonts([{
+    src: "./Font"
+}]);
+
+//variables
 require('./mainvar')(client)
 require(`./ecovar`)(client)
 
+
+//music config
 const voice = new AoiVoice(client, {
     searchOptions: {
         youtubegl: "US",
@@ -43,5 +62,6 @@ voice.addPlugin(
 
 voice.bindExecutor(client.functionManager.interpreter);
 
+//comamand loader from ./commmands
 const loader = new LoadCommands(client);
 loader.load(client.cmd, "./commands")
