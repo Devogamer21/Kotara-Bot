@@ -10,19 +10,17 @@ module.exports =[{
 	type: 'interaction',
 	prototype: 'button',
 	code: `
-	$interactionModal[Withdraw Money;withdrawid;
+	$interactionModal[Deposit Money;withdrawid;
 	{actionRow:
-		{textInput: How much you want to withdraw?:1:withdraw1:false::1:10}}]`
+	{textInput:How much you want to deposit?:1:withdraw1:false:how much do you need?:2:200}]`
 },
 {
 	name: "withdrawid",
 	type: 'interaction',
 	prototype: 'modal',
 	code: `
-	$interactionReply[;{newEmbed:
-	{description: $textInputValue[withdraw1] has been withdraw from your bank.}
-	{color: Yellow}}]
-	$setGlobalUserVar[bank;$sub[$getGlobalUserVar[bank;$authorID;main];$textInputValue[withdraw1]];$authorID;main]
-	$setGlobalUserVar[money;$sum[$getGlobalUserVar[money;$authorID;main];$textInputValue[withdraw1]];$authorID;main]
-	$onlyIf[$textInputValue[withdraw1]=>$getGlobalUserVar[money;$authorID;main];You don't have enough money to withdraw that much.]`
+	$interactionReply[{newEmbed:{description: $textInputValue[withdraw1] has been withdraw from your bank.}{color: Yellow}};everyone;false;false]
+	$setGlobalUserVar[bank;$sub[$getGlobalUserVar[bank;$authorID;eco];$textInputValue[withdraw1]];$authorID;eco]
+	$setGlobalUserVar[money;$sum[$getGlobalUserVar[money;$authorID;eco];$textInputValue[withdraw1]];$authorID;eco]
+	$onlyIf[$textInputValue[withdraw1]=>$getGlobalUserVar[money;$authorID;eco];You don't have enough money to withdraw that much.]`
 }]
