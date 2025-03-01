@@ -13,7 +13,7 @@ const client = new AoiClient({
   events: ["onMessage", "onInteractionCreate"],
   database: {
     type: "aoi.db",
-    db: require("@akarui/aoi.db"),
+    db: require("@aoijs/aoi.db"),
     dbType: "KeyValue",
     tables: ["main","eco"],
     securityKey: "8db071893588c9faa201ab1bf4a2bfdf",
@@ -37,7 +37,7 @@ registerFonts([{
 
 //variables
 require('./mainvar')(client)
-require(`./ecovar`)(client)
+require('./ecovar')(client)
 
 
 //music config

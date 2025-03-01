@@ -30,7 +30,6 @@ module.exports = (client) => {
             //passes
             weeklypass: false,
             
-      },
-      "eco",
+      }, "eco",
     );
   };

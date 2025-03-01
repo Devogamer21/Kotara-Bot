@@ -38,11 +38,11 @@ module.exports = [{
 	{title:Opening Daily Box}
 	{description:You opened $$get[money] and 2 X $get[items] }
 	{color:Yellow}}]
-	$setGlobalUserVar[$get[items];$sum[$getGlobalUserVar[$get[items];$authorID;main];2];$authorID;main]
-	$setGlobalUserVar[money;$sum[$getGlobalUserVar[money;$authorID;main];$let[money];$authorID;main]
+	$setGlobalUserVar[$get[items];$sum[$getGlobalUserVar[$get[items];$authorID;eco];2];$authorID;eco]
+	$setGlobalUserVar[money;$sum[$getGlobalUserVar[money;$authorID;eco];$let[money];$authorID;eco]
 	$let[items;$randomText[fishing_rod;pizza;burger;laptop;fishing_rod;pizza;burger;laptop;fishing_rod;pizza;burger;laptop;fishing_rod;pizza;burger;laptop;fishing_rod;pizza;burger;laptop;fishing_rod;pizza;burger;laptop;fishing_rod;pizza;burger;laptop;fishing_rod;pizza;burger;laptop;fishing_rod;pizza;burger;laptop]]
 	$let[money;$random[100;5000]]
-	$onlyIf[$getGlobalUserVar[daily_box;$authorID;main]>=1;You don't have any daily box to open.]]
+	$onlyIf[$getGlobalUserVar[daily_box;$authorID;eco]>=1;You don't have any daily box to open.]]
 	`
 },
 {
@@ -60,8 +60,8 @@ module.exports = [{
 	prototype:"modal",
 	code:`
 	$interactionReply[;{newEmbed:{title:Eating Burger}{description:You ate and got $get[math]XP }{color:Yellow}}]
-	$setGlobalUserVar[burger;$sub[$getGlobalUserVar[burger;$authorID;main];$textInputValue[burger]];$authorID;main]
-	$setGlobalUserVar[xp;$sum[$getGlobalUserVar[xp;$authorID;main];$get[math]];$authorID;main]
+	$setGlobalUserVar[burger;$sub[$getGlobalUserVar[burger;$authorID;eco];$textInputValue[burger]];$authorID;eco]
+	$setGlobalUserVar[xp;$sum[$getGlobalUserVar[xp;$authorID;eco];$get[math]];$authorID;eco]
 	$let[math;$math[$textInputValue[burger]*70]]
 	`
 },{
@@ -78,8 +78,8 @@ module.exports = [{
 	prototype:"modal",
 	code:`
 	$interactionReply[;{newEmbed:{title:Eating Pizza}{description:You ate and got $get[math]XP }{color:Yellow}};;;false;everyone]
-	$setGlobalUserVar[pizza;$sub[$getGlobalUserVar[pizza;$authorID;main];$textInputValue[pizza]];$authorID;main]
-	$setGlobalUserVar[xp;$sum[$getGlobalUserVar[xp;$authorID;main];$get[math]];$authorID;main]
+	$setGlobalUserVar[pizza;$sub[$getGlobalUserVar[pizza;$authorID;eco];$textInputValue[pizza]];$authorID;eco]
+	$setGlobalUserVar[xp;$sum[$getGlobalUserVar[xp;$authorID;eco];$get[math]];$authorID;eco]
 	$let[math;$math[$textInputValue[pizza]*50]]
 	`
 },]
