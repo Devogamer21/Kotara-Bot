@@ -9,8 +9,9 @@ module.exports = (client) => {
               bank : 0, 
               money: 0,
               xp: 0,
+              lvlon: 1,
               shards: 0,
-              level:0,
+              level:1,
               memes: 0,
     
             //items
