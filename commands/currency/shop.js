@@ -14,12 +14,15 @@ module.exports=[{
     prototype: "selectMenu",
     code: `
  $deleteCommand
- $interactionReply[{newEmbed:
- {title:Inventory 🎒}
+ $sendMessage[{newEmbed:
+ {title:Shopping 🛒}
  {description:
- Daily Boxes : $getGlobalUserVar[daily_box;$authorID;eco]
- Normal Boxes : $getGlobalUserVar[normal_box;$authorID;eco]}};everyone;false]
- $onlyIf[$interactionData[values[0]]==crateshop;]`
+ Normal Box : more cheaper
+ Crazy Box : more expensive but with better rewards
+ Expensive Box : better chances of winning big prizes
+ }}{actionRow:{button:Normal Box:primary:nboxshop:false:📦}{button:Crazy Box:primary:cboxshop:false:📦}{button:Expensive box:primary:exboxshop:false:📦}};false]
+ $onlyIf[$interactionData[values[0]]==crateshop;]
+`
 },
 {
     name: "shopcategory",
@@ -34,7 +37,8 @@ module.exports=[{
  Rifle : the americans love this minigame recomended
  
  Fishing Rod : a mini maybe you knew called fishing}}
+ $addButton[1;Rifle;primary;rifleshop;false;🔫]
+$addButton[1;FishingRod;primary;fishinhrodshop;false;🎣
  $onlyIf[$interactionData[values[0]]==itemshop;]
-$addButton[1;Rifle;primary;rifleshop;false;🔫]
-$addButton[1;FishingRod;primary;fishinhrodshop;false;🔫]`
+`
 }]
