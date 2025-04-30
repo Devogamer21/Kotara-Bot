@@ -39,7 +39,13 @@ module.exports=[{
 
  Rifle : the americans love this minigame recomended
  
- Fishing Rod : a mini maybe you knew called fishing}}{actionRow:{button:Fishing rod:primary:rodshop:false:🎣}{button:Rifle:primary:rifleshop:false:🔫}};false]
+ Fishing Rod : a mini maybe you knew called fishing
+
+ laptop : *laptop*
+ 
+ Pizza : i like pizza
+ 
+ }}{actionRow:{button:Fishing rod:primary:rodshop:false:🎣}{button:Rifle:primary:rifleshop:false:🔫}};false]
 $onlyIf[$interactionData[values[0]]==itemshop;]
 `
 }]
