@@ -19,8 +19,12 @@ module.exports =[{
 	type: 'interaction',
 	prototype: 'modal',
 	code: `
+	$if[$textInputValue[depositid1]==all;
 	$interactionReply[{newEmbed:{description: $textInputValue[depositid1] has been deposited into your bank.}{color: Yellow}};everyone;false;false]
-	$setGlobalUserVar[bank;$sum[$getGlobalUserVar[bank;$authorID;eco];$textInputValue[depositid1]];$authorID;eco]
-	$setGlobalUserVar[money;$sub[$getGlobalUserVar[money;$authorID;eco];$textInputValue[depositid1]];$authorID;eco]
+	$setGlobalUserVar[bank;$sum[$getGlobalUserVar[bank;$authorID;eco];$getGlobalUserVar[money;$authorID;eco]];$authorID;eco]
+	$setGlobalUserVar[money;$sub[$getGlobalUserVar[money;$authorID;eco];$getGlobalUserVar[bank;$authorID;eco]];$authorID;eco]
+	;you wrong lmao]
+
+
 	$onlyIf[$textInputValue[depositid1]<=$getGlobalUserVar[money;$authorID;eco];You don't have enough money to deposit that much.]`
 }]
