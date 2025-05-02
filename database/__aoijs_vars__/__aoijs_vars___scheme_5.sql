@@ -1,1 +1,1 @@
-{}
+{"cooldown_work_798022118952534076":{"value":1746154488621,"type":"number","key":"cooldown_work_798022118952534076"}}

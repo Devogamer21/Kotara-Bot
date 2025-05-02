@@ -13,6 +13,8 @@
     "@akarui/aoi.db": "^2.3.3",
     "@akarui/aoi.music": "^2.4.0",
     "@aoijs/aoi.canvas": "^2.0.0",
+    "@aoijs/aoi.db": "^0.0.0",
+    "all": "^0.0.0",
     "aoi.canvas": "^3.0.10",
     "aoi.js": "^6.9.0",
     "dotenv": "^16.4.7",

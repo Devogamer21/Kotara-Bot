@@ -22,7 +22,7 @@ module.exports =[{
 	$if[$textInputValue[depositid1]==all;
 	$interactionReply[{newEmbed:{description: $textInputValue[depositid1] has been deposited into your bank.}{color: Yellow}};everyone;false;false]
 	$setGlobalUserVar[bank;$sum[$getGlobalUserVar[bank;$authorID;eco];$getGlobalUserVar[money;$authorID;eco]];$authorID;eco]
-	$setGlobalUserVar[money;$sub[$getGlobalUserVar[money;$authorID;eco];$getGlobalUserVar[bank;$authorID;eco]];$authorID;eco]
+	$setGlobalUserVar[money;0;$authorID;eco]
 	;you wrong lmao]
 
 

@@ -5,12 +5,12 @@ module.exports = {
 	$title[$username[$mentioned[1]]'s Balance]
 	$description[
 Money:
-- \`$getGlobalUserVar[money;$mentioned[1];eco]$\`
+- \`$getGlobalUserVar[money;$mentioned[1;true];eco]$\`
 Bank
-- \`$getGlobalUserVar[bank;$mentioned[1];eco]$\`
+- \`$getGlobalUserVar[bank;$mentioned[1;true];eco]$\`
 Shards
-- \`$getGlobalUserVar[shards;$mentioned[1];eco]⏣\`
+- \`$getGlobalUserVar[shards;$mentioned[1;true];eco]⏣\`
 XP
-- \`$getGlobalUserVar[xp;$mentioned[1];eco]/450xp\`]
+- \`$getGlobalUserVar[xp;$mentioned[1;true];eco]/450xp\`]
 	$color[Yellow]`,
 };
