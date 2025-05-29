@@ -19,7 +19,10 @@ module.exports =[{
 	prototype: 'modal',
 	code: `
 	$interactionReply[{newEmbed:{description: $textInputValue[withdraw6] has been withdraw from your bank.}{color: Yellow}};everyone;false;false]
-	$setGlobalUserVar[bank;$sub[$getGlobalUserVar[bank;$authorID;eco];$textInputValue[withdraw6]];$authorID;eco]
-	$setGlobalUserVar[money;$sum[$getGlobalUserVar[money;$authorID;eco];$textInputValue[withdraw6]];$authorID;eco]
-	$onlyIf[$textInputValue[withdraw6]=>$getGlobalUserVar[money;$authorID;eco];You don't have enough money to withdraw that much.]`
+	$setGlobalUserVar[bank;$sub[$getGlobalUserVar[bank;$authorID;eco];$get[amount]];$authorID;eco]
+	$setGlobalUserVar[money;$sum[$getGlobalUserVar[money;$authorID;eco];$get[amount]];$authorID;eco]
+	$onlyIf[$textInputValue[withdraw6]=>$getGlobalUserVar[money;$authorID;eco];You don't have enough money to withdraw that much.]
+
+
+	$let[amount;$advancedReplaceText[$checkCondition[$textInputValue[depositid1]==all];true;$getGlobalUserVar[money;$authorID;eco];false;$textInputValue[depositid1]]]`
 }]

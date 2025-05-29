@@ -16,7 +16,7 @@
     "@aoijs/aoi.db": "^0.0.0",
     "all": "^0.0.0",
     "aoi.canvas": "^3.0.10",
-    "aoi.js": "^6.9.0",
+    "aoi.js": "^6.10.3",
     "dotenv": "^16.4.7",
     "ffmpeg-static": "^5.2.0",
     "opusscript": "^0.0.8"
