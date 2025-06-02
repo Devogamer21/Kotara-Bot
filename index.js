@@ -3,8 +3,7 @@ const { AoiVoice, PlayerEvents, PluginName, Cacher, Filter } = require("@akarui/
 const { AoiCanvas, registerFonts } = require('aoi.canvas');
 const { configDotenv } = require("dotenv");
 require('dotenv').config()
-
-
+const { EnkaClient } = require("enka-network-api");
 
 const client = new AoiClient({
   token: process.env.TOKEN,
@@ -65,3 +64,9 @@ voice.bindExecutor(client.functionManager.interpreter);
 //comamand loader from ./commmands
 const loader = new LoadCommands(client);
 loader.load(client.cmd, "./commands")
+
+// Change the directory to store cache data.
+// Default directory is node_modules/enka-network-api/cache.
+const enka = new EnkaClient();
+enka.cachedAssetsManager.cacheDirectoryPath = "./cache";
+enka.cachedAssetsManager.cacheDirectorySetup();

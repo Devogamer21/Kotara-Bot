@@ -15,10 +15,14 @@
     "@aoijs/aoi.canvas": "^2.0.0",
     "@aoijs/aoi.db": "^0.0.0",
     "all": "^0.0.0",
-    "aoi.canvas": "^3.0.10",
+    "aoi.333canvas": "^3.0.10",
     "aoi.js": "^6.10.3",
     "dotenv": "^16.4.7",
+    "enka-network-api": "^5.0.4",
     "ffmpeg-static": "^5.2.0",
+    "i": "^0.3.7",
+    "node-mcstatus": "^1.2.1",
+    "npm": "^11.4.1",
     "opusscript": "^0.0.8"
   }
 }
