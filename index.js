@@ -6,7 +6,7 @@ require('dotenv').config()
 const { EnkaClient } = require("enka-network-api");
 
 const client = new AoiClient({
-  token: process.env.TOKEN,
+  token: process.env.TOKENTEST,
   prefix: [".", "$getGuildVar[prefix;$guildID;main]"],
   intents: ["MessageContent", "Guilds", "GuildMessages", "GuildVoiceStates"],
   events: ["onMessage", "onInteractionCreate"],
@@ -27,12 +27,6 @@ client.status({
     time: 12,
   });
 
-//canvas setupn
-const canvas = new AoiCanvas(client);
-
-registerFonts([{
-    src: "./Font"
-}]);
 
 //variables
 require('./mainvar')(client)

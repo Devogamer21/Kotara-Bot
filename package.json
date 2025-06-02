@@ -15,7 +15,6 @@
     "@aoijs/aoi.canvas": "^2.0.0",
     "@aoijs/aoi.db": "^0.0.0",
     "all": "^0.0.0",
-    "aoi.333canvas": "^3.0.10",
     "aoi.js": "^6.10.3",
     "dotenv": "^16.4.7",
     "enka-network-api": "^5.0.4",
