@@ -18,10 +18,11 @@ module.exports =[{
 	type: 'interaction',
 	prototype: 'modal',
 	code: `
-		$interactionReply[{newEmbed:{description: $get[amount] has been deposited into your bank.}{color: Yellow}};everyone;false;false]
-	$setGlobalUserVar[bank;$sum[$getGlobalUserVar[bank;$authorID;eco];$get[amount]];$authorID;eco]
-	$setGlobalUserVar[money;$sub[$getGlobalUserVar[money;$authorID;eco];$get[amount]];$authorID;eco]
-	
-	$let[amount;$advancedReplaceText[$checkCondition[$textInputValue[withdraw6]==all];true;$getGlobalUserVar[money;$authorID;eco];false;$textInputValue[withdraw6]]]
-	$onlyIf[$textInputValue[withdraw6]<=$getGlobalUserVar[money;$authorID;eco];You don't have enough money to deposit that much.]`
+	$interactionReply[{newEmbed:{description: $get[amount] has been withdraw from your bank.}{color: Yellow}};everyone;false;false]
+	$setGlobalUserVar[bank;$sub[$getGlobalUserVar[bank;$authorID;eco];$get[amount]];$authorID;eco]
+	$setGlobalUserVar[money;$sum[$getGlobalUserVar[money;$authorID;eco];$get[amount]];$authorID;eco]
+	$onlyIf[$textInputValue[withdraw6]=>$getGlobalUserVar[money;$authorID;eco];You don't have enough money to withdraw that much.]
+
+
+	$let[amount;$advancedReplaceText[$checkCondition[$textInputValue[withdraw6]==all];true;$getGlobalUserVar[money;$authorID;eco];false;$textInputValue[withdraw6]]]`
 }]

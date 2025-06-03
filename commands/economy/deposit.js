@@ -19,10 +19,10 @@ module.exports =[{
 	type: 'interaction',
 	prototype: 'modal',
 	code: `
-	$interactionReply[{newEmbed:{description: $get[amount] has been deposited into your bank.}{color: Yellow}};everyone;false;false]
-	$setGlobalUserVar[bank;$sum[$getGlobalUserVar[bank;$authorID;eco];$get[amount]];$authorID;eco]
-	$setGlobalUserVar[money;$sub[$getGlobalUserVar[money;$authorID;eco];$get[amount]];$authorID;eco]
+	$interactionReply[{newEmbed:{description: $get[amountdep] has been deposited into your bank.}{color: Yellow}};everyone;false;false]
+	$setGlobalUserVar[bank;$sum[$getGlobalUserVar[bank;$authorID;eco];$get[amountdep]];$authorID;eco]
+	$setGlobalUserVar[money;$sub[$getGlobalUserVar[money;$authorID;eco];$get[amountdep]];$authorID;eco]
 	
-	$let[amount;$advancedReplaceText[$checkCondition[$textInputValue[depositid1]==all];true;$getGlobalUserVar[money;$authorID;eco];false;$textInputValue[depositid1]]]
+	$let[amountdep;$advancedReplaceText[$checkCondition[$textInputValue[depositid1]==all];true;$getGlobalUserVar[money;$authorID;eco];false;$textInputValue[depositid1]]]
 	$onlyIf[$textInputValue[depositid1]<=$getGlobalUserVar[money;$authorID;eco];You don't have enough money to deposit that much.]`
 }]
