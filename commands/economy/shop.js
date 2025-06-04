@@ -7,7 +7,7 @@ module.exports=[{
     $image[https://media.discordapp.net/attachments/1070262972527673356/1363747638314401963/5mxneybxa0bc1.jpeg?ex=68072876&is=6805d6f6&hm=cd52373f2beae98eba9b520291c04aed53a61a5c88114ca5e2bf564fbb721eda&=&format=webp&width=456&height=535]
     $footer[the devs are so lazy ]
     $addSelectMenu[1;string;shopcategory;Select a category;1;1;false;Crates:Gold Gold Gold:crateshop:false;Items:A good items for safe your profile:itemshop:false]`
-    
+    $editIn[5s;Expired]
 },{
     name: "shopcategory",
     type: "interaction", // clarifying that this command is an Interaction
